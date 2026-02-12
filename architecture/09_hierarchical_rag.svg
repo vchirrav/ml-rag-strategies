@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow9" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg9" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="540" rx="12" fill="url(#bg9)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Hierarchical RAG</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Two-level coarse-to-fine retrieval</text>
+
+  <!-- User Query -->
+  <rect x="270" y="80" width="180" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="107" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">User Query</text>
+
+  <line x1="360" y1="124" x2="360" y2="155" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow9)"/>
+
+  <!-- L1: Summary Index -->
+  <rect x="130" y="160" width="460" height="100" rx="10" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="360" y="182" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">Level 1: Summary Index</text>
+  <text x="360" y="200" text-anchor="middle" font-size="11" fill="#b45309">Coarse retrieval over section summaries</text>
+
+  <rect x="155" y="215" width="120" height="32" rx="6" fill="#fff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="215" y="236" text-anchor="middle" font-size="10" fill="#92400e">Section A Summary</text>
+
+  <rect x="300" y="215" width="120" height="32" rx="6" fill="#fff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="360" y="236" text-anchor="middle" font-size="10" fill="#92400e">Section B Summary</text>
+
+  <rect x="445" y="215" width="120" height="32" rx="6" fill="#fff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="505" y="236" text-anchor="middle" font-size="10" fill="#92400e">Section C Summary</text>
+
+  <!-- Arrow: identify relevant sections -->
+  <line x1="360" y1="260" x2="360" y2="290" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow9)"/>
+  <text x="450" y="280" font-size="10" fill="#64748b">Identify relevant sections</text>
+
+  <!-- L2: Detail Index -->
+  <rect x="130" y="295" width="460" height="130" rx="10" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="360" y="318" text-anchor="middle" font-size="14" font-weight="700" fill="#1e40af">Level 2: Detail Index</text>
+  <text x="360" y="336" text-anchor="middle" font-size="11" fill="#3b82f6">Fine-grained retrieval within matched sections</text>
+
+  <!-- Detail chunks for Section B (highlighted) -->
+  <rect x="170" y="350" width="100" height="60" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="220" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Section B</text>
+  <text x="220" y="385" text-anchor="middle" font-size="9" fill="#3b82f6">Chunk 1</text>
+  <text x="220" y="398" text-anchor="middle" font-size="9" fill="#3b82f6">detail text...</text>
+
+  <rect x="290" y="350" width="100" height="60" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="340" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Section B</text>
+  <text x="340" y="385" text-anchor="middle" font-size="9" fill="#3b82f6">Chunk 2</text>
+  <text x="340" y="398" text-anchor="middle" font-size="9" fill="#3b82f6">detail text...</text>
+
+  <rect x="410" y="350" width="100" height="60" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+  <text x="460" y="372" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Section B</text>
+  <text x="460" y="385" text-anchor="middle" font-size="9" fill="#3b82f6">Chunk 3</text>
+  <text x="460" y="398" text-anchor="middle" font-size="9" fill="#3b82f6">detail text...</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="425" x2="360" y2="450" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow9)"/>
+
+  <!-- Combined Context -->
+  <rect x="210" y="455" width="300" height="35" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="477" text-anchor="middle" font-size="12" fill="#475569">Precise Detail Chunks as Context</text>
+
+  <line x1="360" y1="490" x2="360" y2="503" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow9)"/>
+
+  <rect x="240" y="505" width="240" height="27" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="360" y="523" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">LLM Generation</text>
+
+  <!-- Side labels -->
+  <rect x="20" y="185" width="95" height="45" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="67" y="204" text-anchor="middle" font-size="10" font-weight="600" fill="#64748b">Skim</text>
+  <text x="67" y="218" text-anchor="middle" font-size="9" fill="#94a3b8">Broad scope</text>
+
+  <rect x="20" y="335" width="95" height="45" rx="6" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="67" y="354" text-anchor="middle" font-size="10" font-weight="600" fill="#64748b">Deep-Read</text>
+  <text x="67" y="368" text-anchor="middle" font-size="9" fill="#94a3b8">Narrow focus</text>
+</svg>

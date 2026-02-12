@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="520" rx="12" fill="url(#bg3)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Knowledge Graph RAG</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Entity-relationship graph traversal for retrieval</text>
+
+  <!-- User Query -->
+  <rect x="270" y="85" width="180" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="112" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">User Query</text>
+
+  <line x1="360" y1="129" x2="360" y2="155" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- Entity Matching -->
+  <rect x="240" y="160" width="240" height="40" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="360" y="185" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">Entity Matching</text>
+
+  <line x1="360" y1="200" x2="360" y2="225" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- Knowledge Graph -->
+  <rect x="140" y="230" width="440" height="165" rx="10" fill="#faf5ff" stroke="#c084fc" stroke-width="1.5"/>
+  <text x="360" y="252" text-anchor="middle" font-size="13" font-weight="600" fill="#7c3aed">Knowledge Graph (NetworkX DiGraph)</text>
+
+  <!-- Graph nodes -->
+  <circle cx="240" cy="305" r="28" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="240" y="309" text-anchor="middle" font-size="10" font-weight="600" fill="#5b21b6">RAG</text>
+
+  <circle cx="380" cy="280" r="28" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="380" y="284" text-anchor="middle" font-size="10" font-weight="600" fill="#5b21b6">Retrieval</text>
+
+  <circle cx="380" cy="355" r="28" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="380" y="359" text-anchor="middle" font-size="10" font-weight="600" fill="#5b21b6">LLM</text>
+
+  <circle cx="500" cy="305" r="28" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="500" y="301" text-anchor="middle" font-size="9" font-weight="600" fill="#5b21b6">Genera-</text>
+  <text x="500" y="313" text-anchor="middle" font-size="9" font-weight="600" fill="#5b21b6">tion</text>
+
+  <!-- Graph edges -->
+  <line x1="268" y1="300" x2="352" y2="282" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="305" y="282" text-anchor="middle" font-size="9" fill="#7c3aed">uses</text>
+  <line x1="268" y1="318" x2="352" y2="348" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="305" y="345" text-anchor="middle" font-size="9" fill="#7c3aed">powered_by</text>
+  <line x1="408" y1="287" x2="472" y2="300" stroke="#a78bfa" stroke-width="1.5"/>
+  <line x1="408" y1="348" x2="472" y2="318" stroke="#a78bfa" stroke-width="1.5"/>
+
+  <!-- BFS label -->
+  <rect x="145" y="355" width="80" height="30" rx="4" fill="#fef3c7" stroke="#fbbf24" stroke-width="1"/>
+  <text x="185" y="374" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">BFS depth=2</text>
+
+  <!-- Arrow down -->
+  <line x1="360" y1="395" x2="360" y2="420" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- Subgraph Facts -->
+  <rect x="220" y="425" width="280" height="35" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="447" text-anchor="middle" font-size="12" fill="#475569">Extracted Facts (Triples)</text>
+
+  <line x1="360" y1="460" x2="360" y2="472" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+  <!-- LLM -->
+  <rect x="240" y="475" width="240" height="35" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="360" y="497" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">LLM Generation</text>
+</svg>

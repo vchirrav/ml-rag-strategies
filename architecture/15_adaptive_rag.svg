@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 570" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow15" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg15" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="570" rx="12" fill="url(#bg15)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Adaptive RAG</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Dynamic strategy routing based on query complexity</text>
+
+  <!-- User Query -->
+  <rect x="270" y="80" width="180" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="107" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">User Query</text>
+
+  <line x1="360" y1="124" x2="360" y2="155" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow15)"/>
+
+  <!-- Classifier -->
+  <rect x="210" y="160" width="300" height="50" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="360" y="182" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">LLM Query Classifier</text>
+  <text x="360" y="200" text-anchor="middle" font-size="11" fill="#b45309">Classify: simple | moderate | complex</text>
+
+  <!-- Three routes -->
+  <line x1="270" y1="210" x2="130" y2="260" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow15)"/>
+  <line x1="360" y1="210" x2="360" y2="260" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrow15)"/>
+  <line x1="450" y1="210" x2="580" y2="260" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow15)"/>
+
+  <!-- Simple -->
+  <rect x="40" y="265" width="190" height="180" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="135" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#166534">Simple</text>
+  <line x1="60" y1="300" x2="210" y2="300" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="60" y="310" width="150" height="35" rx="6" fill="#fff" stroke="#86efac" stroke-width="1"/>
+  <text x="135" y="332" text-anchor="middle" font-size="11" fill="#166534">Direct Search (k=2)</text>
+
+  <rect x="60" y="355" width="150" height="35" rx="6" fill="#fff" stroke="#86efac" stroke-width="1"/>
+  <text x="135" y="377" text-anchor="middle" font-size="11" fill="#166534">Quick retrieval</text>
+
+  <text x="135" y="430" text-anchor="middle" font-size="10" fill="#15803d">Low compute cost</text>
+
+  <!-- Moderate -->
+  <rect x="265" y="265" width="190" height="180" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="360" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#92400e">Moderate</text>
+  <line x1="285" y1="300" x2="435" y2="300" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="285" y="310" width="150" height="35" rx="6" fill="#fff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="360" y="328" text-anchor="middle" font-size="11" fill="#92400e">Query Expansion</text>
+
+  <rect x="285" y="355" width="150" height="35" rx="6" fill="#fff" stroke="#fbbf24" stroke-width="1"/>
+  <text x="360" y="373" text-anchor="middle" font-size="11" fill="#92400e">Merged Retrieval</text>
+
+  <text x="360" y="430" text-anchor="middle" font-size="10" fill="#b45309">Medium compute cost</text>
+
+  <!-- Complex -->
+  <rect x="490" y="265" width="190" height="180" rx="8" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="585" y="290" text-anchor="middle" font-size="13" font-weight="700" fill="#dc2626">Complex</text>
+  <line x1="510" y1="300" x2="660" y2="300" stroke="#e2e8f0" stroke-width="1"/>
+
+  <rect x="510" y="310" width="150" height="35" rx="6" fill="#fff" stroke="#fca5a5" stroke-width="1"/>
+  <text x="585" y="328" text-anchor="middle" font-size="11" fill="#dc2626">Decompose Query</text>
+
+  <rect x="510" y="355" width="150" height="35" rx="6" fill="#fff" stroke="#fca5a5" stroke-width="1"/>
+  <text x="585" y="369" text-anchor="middle" font-size="10" fill="#dc2626">Multi-step Retrieval</text>
+  <text x="585" y="382" text-anchor="middle" font-size="10" fill="#dc2626">&amp; Iteration</text>
+
+  <text x="585" y="430" text-anchor="middle" font-size="10" fill="#ef4444">High compute cost</text>
+
+  <!-- Converge -->
+  <line x1="135" y1="445" x2="310" y2="495" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow15)"/>
+  <line x1="360" y1="445" x2="360" y2="495" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow15)"/>
+  <line x1="585" y1="445" x2="410" y2="495" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow15)"/>
+
+  <!-- Unified generation -->
+  <rect x="210" y="500" width="300" height="45" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="360" y="520" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">Unified LLM Generation</text>
+  <text x="360" y="538" text-anchor="middle" font-size="11" fill="#3b82f6">Matched retrieval effort to query difficulty</text>
+</svg>

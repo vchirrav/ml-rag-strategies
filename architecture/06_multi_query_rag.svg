@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 510" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow6" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg6" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="510" rx="12" fill="url(#bg6)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Multi-Query RAG</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Question decomposition for complex queries</text>
+
+  <!-- User Query -->
+  <rect x="240" y="80" width="240" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="107" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Complex User Query</text>
+
+  <line x1="360" y1="124" x2="360" y2="152" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+
+  <!-- Decompose -->
+  <rect x="210" y="157" width="300" height="48" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="360" y="177" text-anchor="middle" font-size="13" font-weight="600" fill="#92400e">LLM Query Decomposition</text>
+  <text x="360" y="195" text-anchor="middle" font-size="11" fill="#b45309">Break into 2-3 independent sub-questions</text>
+
+  <!-- Fan out to sub-questions -->
+  <line x1="280" y1="205" x2="140" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+  <line x1="360" y1="205" x2="360" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+  <line x1="440" y1="205" x2="560" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+
+  <!-- Sub-questions + retrieval -->
+  <rect x="55" y="255" width="170" height="75" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="140" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Sub-Question 1</text>
+  <line x1="80" y1="290" x2="200" y2="290" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="140" y="308" text-anchor="middle" font-size="10" fill="#3b82f6">FAISS Retrieval</text>
+  <text x="140" y="322" text-anchor="middle" font-size="10" fill="#3b82f6">k=2 docs</text>
+
+  <rect x="275" y="255" width="170" height="75" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="360" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Sub-Question 2</text>
+  <line x1="300" y1="290" x2="420" y2="290" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="360" y="308" text-anchor="middle" font-size="10" fill="#3b82f6">FAISS Retrieval</text>
+  <text x="360" y="322" text-anchor="middle" font-size="10" fill="#3b82f6">k=2 docs</text>
+
+  <rect x="495" y="255" width="170" height="75" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="580" y="278" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Sub-Question 3</text>
+  <line x1="520" y1="290" x2="640" y2="290" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="580" y="308" text-anchor="middle" font-size="10" fill="#3b82f6">FAISS Retrieval</text>
+  <text x="580" y="322" text-anchor="middle" font-size="10" fill="#3b82f6">k=2 docs</text>
+
+  <!-- Converge -->
+  <line x1="140" y1="330" x2="310" y2="375" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+  <line x1="360" y1="330" x2="360" y2="375" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+  <line x1="580" y1="330" x2="410" y2="375" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+
+  <!-- Aggregate -->
+  <rect x="230" y="380" width="260" height="40" rx="8" fill="#ede9fe" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="360" y="405" text-anchor="middle" font-size="13" font-weight="600" fill="#5b21b6">Aggregate &amp; Deduplicate</text>
+
+  <line x1="360" y1="420" x2="360" y2="445" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow6)"/>
+
+  <!-- LLM -->
+  <rect x="220" y="450" width="280" height="40" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="360" y="475" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">LLM Synthesis (Unified Answer)</text>
+</svg>
