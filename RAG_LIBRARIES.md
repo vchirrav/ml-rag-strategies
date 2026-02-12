@@ -58,48 +58,48 @@ pip install docling
 
 ---
 
-### 4. ChromaDB
+### 4. Haystack
 
-**GitHub:** [chroma-core/chroma](https://github.com/chroma-core/chroma)
+**GitHub:** [deepset-ai/haystack](https://github.com/deepset-ai/haystack)
 
-An open-source embedding database designed for AI applications. Chroma provides a simple API for storing, searching, and filtering embeddings, serving as the vector store backbone for many RAG systems.
+An open-source Python framework by deepset for building RAG pipelines and LLM applications. Haystack provides a pipeline-based architecture where you compose retrieval, ranking, and generation components into flexible, production-ready workflows.
 
 **Key features:**
-- Simple Python-native API with minimal setup
-- Automatic embedding generation via built-in integrations
-- Metadata filtering and multi-modal support
-- Runs in-memory, on-disk, or as a client-server deployment
+- Modular pipeline architecture with reusable components
+- Built-in support for re-ranking, query expansion, and hybrid retrieval
+- Document converters for PDF, HTML, DOCX, and more
+- Evaluation tools for end-to-end RAG pipeline assessment
 
 ```bash
-pip install chromadb
+pip install haystack-ai
 ```
 
 ---
 
-### 5. FAISS (Facebook AI Similarity Search)
+### 5. Unstructured
 
-**GitHub:** [facebookresearch/faiss](https://github.com/facebookresearch/faiss)
+**GitHub:** [Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured)
 
-A high-performance library by Meta for dense vector similarity search and clustering. FAISS is the go-to choice when you need efficient nearest-neighbor retrieval at scale, powering the vector search layer in many production RAG systems.
+A Python library for preprocessing and ingesting unstructured data (PDFs, emails, images, HTML, Word docs) into formats suitable for RAG pipelines. It handles partitioning, cleaning, and chunking documents so they are ready for embedding and retrieval.
 
 **Key features:**
-- Optimized for billion-scale vector search (GPU and CPU)
-- Multiple index types (flat, IVF, HNSW, PQ) for speed/accuracy trade-offs
-- Batch search and range search capabilities
-- Widely used as the backend for higher-level RAG frameworks
+- Partitioning for 25+ file types with automatic format detection
+- Table extraction and OCR for scanned documents
+- Built-in chunking strategies (by title, by page, overlap-aware)
+- Direct integrations with LangChain, LlamaIndex, and Haystack
 
 ```bash
-pip install faiss-cpu   # or faiss-gpu for GPU support
+pip install unstructured
 ```
 
 ---
 
 ## Quick Comparison
 
-| Library    | Primary Role           | Best For                                    |
-|------------|------------------------|---------------------------------------------|
-| LangChain  | RAG framework          | End-to-end pipelines with broad integrations|
-| LlamaIndex | RAG data framework     | Advanced indexing and query strategies       |
-| Docling    | Document parsing       | High-fidelity ingestion of complex documents|
-| ChromaDB   | Vector database        | Lightweight embedding storage and retrieval  |
-| FAISS      | Vector similarity search | High-performance search at scale           |
+| Library      | Primary Role             | Best For                                     |
+|--------------|--------------------------|----------------------------------------------|
+| LangChain    | RAG framework            | End-to-end pipelines with broad integrations |
+| LlamaIndex   | RAG data framework       | Advanced indexing and query strategies        |
+| Docling      | Document parsing         | High-fidelity ingestion of complex documents |
+| Haystack     | RAG pipeline framework   | Modular, production-ready RAG workflows      |
+| Unstructured | Document preprocessing   | Ingesting and chunking diverse file formats  |
