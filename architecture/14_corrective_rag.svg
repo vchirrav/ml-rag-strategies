@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow14" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg14" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="560" rx="12" fill="url(#bg14)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Corrective RAG (CRAG)</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Quality gates with web search fallback</text>
+
+  <!-- User Query -->
+  <rect x="270" y="80" width="180" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="107" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">User Query</text>
+
+  <line x1="360" y1="124" x2="360" y2="155" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow14)"/>
+
+  <!-- Initial Retrieval -->
+  <rect x="230" y="160" width="260" height="40" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="360" y="185" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">FAISS Retrieval (k=4)</text>
+
+  <line x1="360" y1="200" x2="360" y2="230" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow14)"/>
+
+  <!-- Document Grading -->
+  <rect x="200" y="235" width="320" height="50" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="360" y="257" text-anchor="middle" font-size="13" font-weight="600" fill="#92400e">LLM Document Grading</text>
+  <text x="360" y="275" text-anchor="middle" font-size="11" fill="#b45309">Binary relevance classification per document</text>
+
+  <!-- Decision -->
+  <line x1="280" y1="285" x2="180" y2="330" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow14)"/>
+  <text x="200" y="310" font-size="11" font-weight="600" fill="#16a34a">≥ 2 relevant</text>
+
+  <line x1="440" y1="285" x2="540" y2="330" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow14)"/>
+  <text x="510" y="310" font-size="11" font-weight="600" fill="#dc2626">&lt; 2 relevant</text>
+
+  <!-- Good path -->
+  <rect x="80" y="335" width="220" height="45" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="190" y="355" text-anchor="middle" font-size="12" font-weight="600" fill="#166534">Use Relevant Documents</text>
+  <text x="190" y="372" text-anchor="middle" font-size="10" fill="#15803d">High-quality context available</text>
+
+  <!-- Fallback path -->
+  <rect x="440" y="335" width="220" height="45" rx="8" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="550" y="355" text-anchor="middle" font-size="12" font-weight="600" fill="#dc2626">Quality Too Low</text>
+  <text x="550" y="372" text-anchor="middle" font-size="10" fill="#ef4444">Insufficient relevant results</text>
+
+  <line x1="550" y1="380" x2="550" y2="410" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow14)"/>
+
+  <!-- Web Search -->
+  <rect x="440" y="415" width="220" height="45" rx="8" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="550" y="435" text-anchor="middle" font-size="12" font-weight="600" fill="#0369a1">Web Search Fallback</text>
+  <text x="550" y="452" text-anchor="middle" font-size="10" fill="#0284c7">Supplement with web results</text>
+
+  <!-- Merge -->
+  <line x1="190" y1="380" x2="310" y2="480" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow14)"/>
+  <line x1="550" y1="460" x2="420" y2="480" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow14)"/>
+
+  <!-- Corrected Context -->
+  <rect x="220" y="485" width="280" height="35" rx="8" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="507" text-anchor="middle" font-size="12" fill="#475569">Corrected Context</text>
+
+  <line x1="360" y1="520" x2="360" y2="535" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow14)"/>
+
+  <rect x="240" y="535" width="240" height="20" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="360" y="550" text-anchor="middle" font-size="12" font-weight="600" fill="#166534">LLM Generation</text>
+</svg>

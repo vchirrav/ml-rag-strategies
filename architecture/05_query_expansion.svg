@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow5" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="500" rx="12" fill="url(#bg5)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Query Expansion</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Multiple query variants to improve recall</text>
+
+  <!-- User Query -->
+  <rect x="270" y="80" width="180" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="107" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">User Query</text>
+
+  <line x1="360" y1="124" x2="360" y2="150" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+
+  <!-- LLM Expansion -->
+  <rect x="220" y="155" width="280" height="45" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="360" y="175" text-anchor="middle" font-size="13" font-weight="600" fill="#92400e">LLM Query Expansion</text>
+  <text x="360" y="192" text-anchor="middle" font-size="11" fill="#b45309">Generate 3 alternative phrasings</text>
+
+  <!-- Fan out -->
+  <line x1="260" y1="200" x2="120" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+  <line x1="330" y1="200" x2="300" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+  <line x1="390" y1="200" x2="420" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+  <line x1="460" y1="200" x2="570" y2="250" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+
+  <!-- Query variants -->
+  <rect x="55" y="255" width="130" height="50" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="120" y="276" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Original Query</text>
+  <text x="120" y="293" text-anchor="middle" font-size="10" fill="#3b82f6">Retrieve k=3</text>
+
+  <rect x="235" y="255" width="130" height="50" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="300" y="276" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Variant 1</text>
+  <text x="300" y="293" text-anchor="middle" font-size="10" fill="#3b82f6">Retrieve k=3</text>
+
+  <rect x="355" y="255" width="130" height="50" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="420" y="276" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Variant 2</text>
+  <text x="420" y="293" text-anchor="middle" font-size="10" fill="#3b82f6">Retrieve k=3</text>
+
+  <rect x="505" y="255" width="130" height="50" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="570" y="276" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">Variant 3</text>
+  <text x="570" y="293" text-anchor="middle" font-size="10" fill="#3b82f6">Retrieve k=3</text>
+
+  <!-- Converge -->
+  <line x1="120" y1="305" x2="300" y2="355" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+  <line x1="300" y1="305" x2="330" y2="355" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+  <line x1="420" y1="305" x2="390" y2="355" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+  <line x1="570" y1="305" x2="420" y2="355" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+
+  <!-- Dedup -->
+  <rect x="230" y="360" width="260" height="40" rx="8" fill="#ede9fe" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="360" y="385" text-anchor="middle" font-size="13" font-weight="600" fill="#5b21b6">Deduplicate Results</text>
+
+  <line x1="360" y1="400" x2="360" y2="425" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow5)"/>
+
+  <!-- LLM Generation -->
+  <rect x="230" y="430" width="260" height="40" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="360" y="455" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">LLM Generation</text>
+
+  <text x="360" y="490" text-anchor="middle" font-size="11" fill="#64748b">Key Idea: Vocabulary mismatch mitigation through paraphrasing</text>
+</svg>

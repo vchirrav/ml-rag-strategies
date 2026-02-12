@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 510" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow11" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg11" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="510" rx="12" fill="url(#bg11)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">HyDE (Hypothetical Document Embeddings)</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Bridge query-document semantic gap with generated documents</text>
+
+  <!-- User Query -->
+  <rect x="270" y="85" width="180" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="112" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">User Query</text>
+
+  <!-- Split into two paths -->
+  <line x1="310" y1="129" x2="190" y2="170" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow11)"/>
+  <line x1="410" y1="129" x2="530" y2="170" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow11)"/>
+
+  <!-- Left path: Generate hypothetical doc -->
+  <rect x="80" y="175" width="220" height="55" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="190" y="198" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">Generate Hypothetical</text>
+  <text x="190" y="216" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">Document (LLM)</text>
+
+  <line x1="190" y1="230" x2="190" y2="260" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow11)"/>
+
+  <rect x="90" y="265" width="200" height="50" rx="8" fill="#ede9fe" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="190" y="286" text-anchor="middle" font-size="11" font-weight="600" fill="#5b21b6">Hypothetical Answer</text>
+  <text x="190" y="303" text-anchor="middle" font-size="10" fill="#7c3aed">"A detailed passage that...</text>
+
+  <line x1="190" y1="315" x2="190" y2="345" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow11)"/>
+
+  <rect x="100" y="350" width="180" height="40" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="190" y="375" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">Embed Hypo-Doc</text>
+
+  <!-- Right path: label -->
+  <rect x="430" y="175" width="200" height="55" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="530" y="198" text-anchor="middle" font-size="12" font-weight="600" fill="#64748b">Original Query</text>
+  <text x="530" y="216" text-anchor="middle" font-size="11" fill="#94a3b8">(saved for generation)</text>
+
+  <!-- Retrieval with hypo-doc embedding -->
+  <line x1="190" y1="390" x2="360" y2="420" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow11)"/>
+
+  <rect x="210" y="420" width="300" height="40" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="360" y="445" text-anchor="middle" font-size="13" font-weight="600" fill="#1e40af">FAISS Retrieval (using hypo-doc embedding)</text>
+
+  <!-- Arrow to LLM -->
+  <line x1="360" y1="460" x2="360" y2="475" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow11)"/>
+
+  <!-- Also connect original query -->
+  <line x1="530" y1="230" x2="530" y2="475" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="530" y1="475" x2="480" y2="475" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#arrow11)"/>
+
+  <!-- LLM Generation -->
+  <rect x="230" y="475" width="250" height="28" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="355" y="494" text-anchor="middle" font-size="12" font-weight="600" fill="#166534">LLM Generation (query + context)</text>
+
+  <!-- Key insight -->
+  <text x="530" y="310" text-anchor="middle" font-size="10" fill="#64748b">Query for generation</text>
+  <text x="190" y="340" text-anchor="middle" font-size="10" fill="#7c3aed">Embedding for retrieval</text>
+</svg>

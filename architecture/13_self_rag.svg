@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow13" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#475569"/></marker>
+    <linearGradient id="bg13" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="720" height="560" rx="12" fill="url(#bg13)" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">Self-RAG</text>
+  <text x="360" y="62" text-anchor="middle" font-size="12" fill="#64748b">Self-reflection tokens control retrieval and verification</text>
+
+  <!-- User Query -->
+  <rect x="270" y="80" width="180" height="44" rx="22" fill="#3b82f6" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="360" y="107" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">User Query</text>
+
+  <line x1="360" y1="124" x2="360" y2="155" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow13)"/>
+
+  <!-- Step 1: Should Retrieve? -->
+  <rect x="210" y="160" width="300" height="50" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="360" y="182" text-anchor="middle" font-size="13" font-weight="600" fill="#92400e">Step 1: Should Retrieve?</text>
+  <text x="360" y="200" text-anchor="middle" font-size="11" fill="#b45309">LLM decides if retrieval is needed</text>
+
+  <!-- Decision diamond-ish -->
+  <line x1="290" y1="210" x2="200" y2="240" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow13)"/>
+  <text x="220" y="228" font-size="10" fill="#16a34a">Yes</text>
+
+  <line x1="430" y1="210" x2="560" y2="240" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrow13)"/>
+  <text x="510" y="228" font-size="10" fill="#dc2626">No</text>
+
+  <!-- Yes path: Retrieve -->
+  <rect x="100" y="245" width="220" height="40" rx="8" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="210" y="270" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">Step 2: FAISS Retrieval</text>
+
+  <line x1="210" y1="285" x2="210" y2="315" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow13)"/>
+
+  <!-- Generate -->
+  <rect x="100" y="320" width="220" height="40" rx="8" fill="#ede9fe" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="210" y="345" text-anchor="middle" font-size="12" font-weight="600" fill="#5b21b6">Step 3: Generate Answer</text>
+
+  <line x1="210" y1="360" x2="210" y2="390" stroke="#475569" stroke-width="1.5" marker-end="url(#arrow13)"/>
+
+  <!-- Verify -->
+  <rect x="80" y="395" width="260" height="50" rx="8" fill="#fef3c7" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="210" y="417" text-anchor="middle" font-size="12" font-weight="600" fill="#92400e">Step 4: Is Response Grounded?</text>
+  <text x="210" y="435" text-anchor="middle" font-size="10" fill="#b45309">LLM verifies faithfulness to context</text>
+
+  <!-- Grounded check -->
+  <line x1="210" y1="445" x2="210" y2="480" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrow13)"/>
+  <text x="225" y="465" font-size="10" fill="#16a34a">Grounded</text>
+
+  <!-- Loop back if not grounded -->
+  <path d="M 80 420 Q 40 420 40 340 Q 40 320 100 320" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow13)"/>
+  <text x="30" y="370" font-size="9" fill="#dc2626" transform="rotate(-90,30,370)">Not grounded → retry</text>
+
+  <!-- No-retrieve path: Direct answer -->
+  <rect x="480" y="245" width="180" height="40" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="570" y="270" text-anchor="middle" font-size="12" fill="#64748b">Direct LLM Answer</text>
+
+  <line x1="570" y1="285" x2="570" y2="480" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="570" y1="480" x2="480" y2="498" stroke="#94a3b8" stroke-width="1.2" marker-end="url(#arrow13)"/>
+
+  <!-- Final output -->
+  <rect x="170" y="485" width="300" height="44" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="320" y="505" text-anchor="middle" font-size="13" font-weight="600" fill="#166534">Verified Final Answer</text>
+  <text x="320" y="522" text-anchor="middle" font-size="11" fill="#15803d">Grounded in retrieved context</text>
+</svg>
