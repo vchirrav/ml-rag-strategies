@@ -13,6 +13,28 @@ export OPENAI_API_KEY="your-api-key-here"
 
 ---
 
+## Strategy Overview
+
+| # | Strategy | Example Use Case |
+|---|----------|-----------------|
+| 1 | Re-Ranking | Customer support bot re-scoring FAQ matches to surface the most relevant answer |
+| 2 | Agentic RAG | Research assistant that decides whether to search docs, web, or databases based on the question |
+| 3 | Knowledge Graph RAG | Medical Q&A traversing drug-gene-disease relationships for multi-hop answers |
+| 4 | Contextual Retrieval | Legal document search where isolated clauses lose meaning without contract context |
+| 5 | Query Expansion | E-commerce search matching "laptop" with results about "notebook computer" |
+| 6 | Multi-Query RAG | Answering "Compare React and Vue performance and ecosystem" by splitting into sub-questions |
+| 7 | Context-Aware Chunking | Technical manuals where fixed splits would break mid-procedure or mid-table |
+| 8 | Late Chunking | Academic papers where pronoun references ("this method") span multiple paragraphs |
+| 9 | Hierarchical RAG | Large codebases — first find the relevant module summary, then drill into specific functions |
+| 10 | Fine-Tuned RAG | Domain-specific search in biomedical literature using specialized terminology |
+| 11 | HyDE | Vague user queries like "how to fix slow builds" matched against detailed solution docs |
+| 12 | RAG-Fusion | Product search combining results from multiple query rephrasings via rank fusion |
+| 13 | Self-RAG | Chatbot that skips retrieval for greetings but fetches docs for technical questions |
+| 14 | Corrective RAG (CRAG) | Internal wiki Q&A that falls back to web search when local docs are insufficient |
+| 15 | Adaptive RAG | Help desk routing simple FAQs to direct lookup and complex issues to multi-step retrieval |
+
+---
+
 ## Strategies
 
 ### 1. Re-Ranking
