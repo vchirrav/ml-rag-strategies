@@ -1,9 +1,7 @@
-"""Re-Ranking RAG: Retrieve broadly, then re-rank results by relevance."""
-
 import os
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
-from langchain.schema import Document
+from langchain_core.documents import Document 
 from sentence_transformers import CrossEncoder
 
 # Load API key securely from environment
