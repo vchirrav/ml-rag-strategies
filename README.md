@@ -1,5 +1,7 @@
 # ML RAG Strategies
 
+![15 RAG Strategies Overview](architecture/rag-strategies-overview.png)
+
 A collection of Retrieval-Augmented Generation (RAG) strategies with Python code samples. Each strategy demonstrates a different approach to improving retrieval quality, generation accuracy, or overall RAG pipeline performance.
 
 ## Setup
